@@ -1,0 +1,51 @@
+header .head-area {
+    display: flex;
+    margin-left: auto;
+    justify-content: flex-end;
+    margin-right: 16px;
+    position: relative;
+}
+
+header .head-area i {
+    font-size: 1.6rem;
+}
+
+header ul.drop-down {
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    cursor: pointer;
+    display: none;
+}
+
+header #settings-toogler {
+    display: none;
+}
+
+header #settings-toogler~label>i {
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+}
+
+header #settings-toogler:checked~label>i {
+    transform: rotate(45deg);
+}
+
+header #settings-toogler:checked~ul.drop-down {
+    display: inline;
+}
+
+header ul.drop-down li {
+    padding: 6px 14px;
+}
+
+header ul.drop-down li:not(:last-child) {
+    border-bottom: 1px solid #777;
+}
+
+header ul.drop-down li:hover {
+    background-color: #fff;
+    color: black;
+}

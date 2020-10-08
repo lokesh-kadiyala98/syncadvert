@@ -1,0 +1,63 @@
+.media {
+    padding: 10px;
+    transition: all 220ms;
+}
+
+.media:hover {
+    box-shadow: 1px 1px 10px black;
+}
+
+.media img {
+    width: 75px;
+    border-radius: 50%;
+}
+
+.media .overlay {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    transition: all 220ms ease;
+    opacity: 0;
+}
+
+.media:hover .overlay {
+    opacity: 1;
+}
+
+.media .overlay i {
+    align-self: center;
+    font-size: 2em;
+    color: #dc3545;
+    cursor: pointer;
+}
+
+.media .media-body {
+    align-self: center;
+}
+
+.media .media-body h5 {
+    text-transform: capitalize;
+    font-weight: bolder;
+    margin-bottom: 0;
+}
+
+.media .media-body p {
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+@media screen and (min-width: 768px) {
+    .media img {
+        width: 100px;
+    }
+
+    .media .overlay {
+        width: 100px;
+        height: 100px;
+    }
+}

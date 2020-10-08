@@ -1,0 +1,25 @@
+.not-found {
+    height: 100vh;
+}
+
+.not-found .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+
+.not-found .container h1 {
+    font-size: 10em;
+    color: #d6cc47;
+    text-shadow: 15px 15px 20px #153438;
+}
+
+.not-found .container .btn {
+    background-color: #d6cc47;
+    transition: all 250ms ease-in-out;
+}
+
+.not-found .container .btn:hover {
+    box-shadow: 3px 3px 10px black;
+}

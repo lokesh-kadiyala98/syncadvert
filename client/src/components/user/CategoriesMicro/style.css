@@ -1,0 +1,20 @@
+.categories-micro .row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.categories-micro a img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 20px;
+    filter: grayscale(.5);
+    transform: scale(1.02);
+    transition: all 225ms ease-in-out;
+    overflow: hidden;
+}
+
+.categories-micro a:hover img {
+    filter: grayscale(0);
+    transform: scale(1);
+}

@@ -1,0 +1,233 @@
+#team {
+    background: #f6f7fe;
+}
+
+#team .team-section-text {
+    padding-top: 70px;
+    display: flex;
+    align-self: center;
+}
+
+#team .section-title {
+    text-align: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.section-text>p {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+#team .team-single-container {
+    display: flex;
+    align-self: center;
+}
+
+#team .team-single {
+    border: 8px solid #e6e9f4;
+    margin: 0 auto;
+    padding: 15px;
+    width: 320px;
+    display: none;
+}
+
+#team .team-single.active {
+    display: block;
+}
+
+#team .team-list {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+#team .team-list>ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#team .team-list>ul>li {
+    position: relative;
+    margin: 15px 0;
+    cursor: pointer;
+}
+
+#team .team-list>ul>li:first-child {
+    margin-top: 0;
+}
+
+#team .team-list>ul>li:last-child {
+    margin-bottom: 0;
+}
+
+#team .team-list>ul>li.active>figure:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #15343865;
+}
+
+#team .team-list>ul>li>figure {
+    border-radius: 50%;
+    height: 100px;
+    overflow: hidden;
+    width: 100px;
+    position: relative;
+}
+
+#team .team-list>ul>li>figure>img {
+    width: 100%;
+}
+
+#team .team-info>h4 {
+    color: #153438;
+    font-size: 16px;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#team .team-img {
+    position: relative;
+}
+
+#team .team-img>img {
+    width: 100%;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+#team .team-social>ul {
+    bottom: 0;
+    list-style: none;
+    margin: 0 0 0 20px;
+    padding: 0;
+    position: absolute;
+    right: 30px;
+    opacity: 0;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+#team .team-social>ul>li>a {
+    display: block;
+    font-size: 22px;
+    margin: 15px 5px;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    width: 60px;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    border: 1px solid #dee3f4;
+    border-radius: 50%;
+}
+
+#team .team-single:hover .team-img>img {
+    margin-left: -70px;
+}
+
+#team .team-single:hover .team-social>ul {
+    opacity: 1;
+    right: 0;
+}
+
+.team-section-text>.section-text>p>a {
+    display: inline-block;
+    text-transform: uppercase;
+    border-bottom: 2px solid black;
+    font-weight: 500 !important;
+    word-spacing: .2em;
+}
+
+.team-section-text>.section-text>p>a>.fa-arrow-right {
+    transition: all .3s ease;
+}
+
+.team-section-text>.section-text>p>a:hover .fa-arrow-right {
+    transform: translateX(5px);
+}
+
+@media screen and (min-width: 1200px) {
+    #team .section-title {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #team .section-title {
+        font-size: 1.6em;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    #team .section-title {
+        font-size: 2em;
+    }
+
+    #team .team-section-text {
+        padding-bottom: 50px;
+        padding-top: 0;
+    }
+
+    #team .team-info>h4 {
+        margin-top: 0;
+    }
+
+    #team .team-social>ul {
+        position: relative;
+        right: 0;
+        opacity: 1;
+        display: flex;
+        justify-content: center;    
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #team .team-section-text {
+        padding-bottom: 30px;
+        padding-top: 0;
+    }
+
+    #team .team-single {
+        margin: 10px auto 0;
+        overflow: hidden;
+        padding: 10px;
+    }
+
+    #team .team-list>ul>li {
+        position: relative;
+    }
+
+    #team .team-list>ul>li>figure {
+        height: 65px;
+        position: relative;
+        width: 65px;
+        margin-bottom: 0;
+    }
+
+    #team .team-list>ul>li.active::after {
+        margin-top: 10px;
+        position: absolute;
+        right: 30px !important;
+        top: 100%;
+        -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+
+    #team .team-list>ul>li {
+        display: inline-block;
+        margin-right: .4em;
+    }
+}

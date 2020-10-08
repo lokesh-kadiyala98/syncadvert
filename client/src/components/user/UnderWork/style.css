@@ -1,0 +1,8 @@
+.under-work {
+}
+
+.under-work img {
+    display: flex;
+    margin: 0 auto;
+    max-width: min(100%, 992px);
+}

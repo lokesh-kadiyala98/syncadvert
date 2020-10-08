@@ -1,0 +1,163 @@
+header.hero {
+    height: 100vh;
+    background-color: #153438;
+    box-shadow: 0 20px 20px 0px #15343890;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.bubbles img {
+    width: 100%;
+    animation: fadein 8s;
+}
+
+.bubbles #bubble-img-1 {
+    width: 35vw;
+    position: absolute;
+    left: -18vw;
+    top: 8vh;
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+    -webkit-animation: bounce-bubble-1 35s infinite;
+    animation: bounce-bubble-1 35s infinite;
+}
+
+#bubble-img-2 {
+    width: 20vw;
+    position: absolute;
+    left: 43vw;
+    top: 8vh;
+    -webkit-animation: bounce-bubble-2 28s infinite;
+    animation: bounce-bubble-2 28s infinite;
+}
+
+#bubble-img-3 {
+    width: 25vw;
+    position: absolute;
+    right: 15px;
+    top: 10vh;
+    -webkit-animation: bounce-bubble-2 24s infinite;
+    animation: bounce-bubble-2 24s infinite;
+}
+
+.infogram-content {
+    position: absolute;
+    width: auto;
+    color: #fff;
+    background-color: #00000080;
+    padding: 25px;
+    padding-left: 40px;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -35%);
+    z-index: 3;
+}
+
+.infogram-content p {
+    display: inline;
+    letter-spacing: 0.5em;
+    font-size: 0.8em;
+}
+
+.infogram-content h1 {
+    white-space: nowrap;
+    letter-spacing: 0.4em;
+    line-height: 1.3em;
+}
+
+.infogram-content .memories-h1 {
+    letter-spacing: 0.7em;
+    line-height: 0;
+}
+
+@media only screen and (max-width: 1023px) {
+    .infogram-content h1 {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .infogram-content h1 {
+        font-size: 1.6rem;
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    #bubble-img-3 {
+        width: 55vw;
+        right: -35vw;
+        top: 40vh;
+        filter: blur(1px);
+        -webkit-filter: blur(1px);
+    }
+
+    .infogram-content h1 {
+        font-size: 1.4rem;
+    }
+}
+
+@keyframes bounce-bubble-1 {
+    0% {
+        -webkit-transform: translate3d(-5px, 0, 0);
+        transform: translate3d(-5px, 0, 0);
+    }
+    50% {
+        -webkit-transform: translate3d(-5px, 100px, 0);
+        transform: translate3d(-5px, 100px, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(-5px, 0, 0);
+        transform: translate3d(-5px, 0, 0);
+    }
+}
+
+@-webkit-keyframes bounce-bubble-1 {
+    0% {
+        -webkit-transform: translate3d(-5px, 0, 0);
+        transform: translate3d(-5px, 0, 0);
+    }
+    50% {
+        -webkit-transform: translate3d(-5px, 150px, 0);
+        transform: translate3d(-5px, 150px, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(-5px, 0, 0);
+        transform: translate3d(-5px, 0, 0);
+    }
+}
+
+@keyframes bounce-bubble-2 {
+    0% {
+        -webkit-transform: translate3d(-5px, 0, 0);
+        transform: translate3d(-5px, 0, 0);
+    }
+    50% {
+        -webkit-transform: translate3d(5px, 200px, 0);
+        transform: translate3d(5px, 200px, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(-5px, 0, 0);
+        transform: translate3d(-5px, 0, 0);
+    }
+}
+
+@-webkit-keyframes bounce-bubble-2 {
+    0% {
+        -webkit-transform: translate3d(-5px, 0, 0);
+        transform: translate3d(-5px, 0, 0);
+    }
+    50% {
+        -webkit-transform: translate3d(5px, 200px, 0);
+        transform: translate3d(5px, 200px, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(-5px, 0, 0);
+        transform: translate3d(-5px, 0, 0);
+    }
+}
+
+@keyframes fadein {
+    from { opacity: 0}
+    to   { opacity: 1}
+}

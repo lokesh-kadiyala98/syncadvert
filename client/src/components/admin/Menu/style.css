@@ -1,0 +1,69 @@
+.menu {
+    background: #21250a80;
+    backdrop-filter: blur(16px);
+    position: absolute;
+    top: 15px;
+    padding-inline-start: 0;
+    pointer-events: all;
+    z-index: 100;
+    display: none;
+    font-size: 16px;
+}
+
+.menu .active,
+.menu .active:hover {
+    background-color: #000;
+}
+
+.menu li {
+    padding: 2px 40px 2px 20px;
+    cursor: pointer;
+    position: relative;
+    pointer-events: all;
+}
+
+.menu li:first-child {    
+    padding-top: 5px;
+}
+
+.menu li:last-child {
+    padding-bottom: 5px;
+}
+
+.menu-item.active {
+    cursor: default;
+}
+
+.menu .sub-menu {
+    padding-inline-start: 0;
+    background: #21250a80;
+    backdrop-filter: blur(18px);
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: max-content;
+    pointer-events: all;
+}
+
+.menu li:hover {
+    background: #21250a;
+}
+
+.menu li:hover .sub-menu {
+    display: block;
+}
+
+.menu .line-top {
+    border-top: 1px solid rgb(172, 172, 172);
+}
+
+.menu .hover-bg-success:hover {
+    background: #17a2b8;
+    color: #000;
+}
+
+.menu .hover-bg-danger:hover {
+    background: #dc3545;
+    color: #000;
+}

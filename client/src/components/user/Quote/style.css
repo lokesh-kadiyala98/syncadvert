@@ -1,0 +1,58 @@
+.quote {
+    height: 90vh;
+    display: flex;
+}
+
+.quote .container {
+    align-self: center;
+    position: relative;
+}
+
+.quote .text {
+    font-size: 2em;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    position: relative;
+}
+
+.quote .text::before {
+    content: "\201C";
+    font-size: 1000%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    color: #d6cc47a0;
+}
+
+.quote span {
+    position: relative;
+    font-weight: 800;
+    overflow: hidden;
+    background: linear-gradient(to right, #d6cc47, #d6cc47 50%, #153438 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms 200ms ease;
+}
+  
+.quote .text:hover span {
+    background-position: 0 100%;
+}
+
+.quote cite {
+    float: right;
+    font-size: 1.2em;
+}
+
+@media screen and (min-width: 991px) {
+    .quote .text {
+        font-size: 2.5em;
+    }
+
+    .quote cite {
+        font-size: 1.4em;
+    }
+}

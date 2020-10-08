@@ -1,0 +1,139 @@
+.card-columns {
+    opacity: 0;
+    animation: load-in 2000ms ease-out forwards;
+    padding: 12px;
+}
+
+.collage {
+    margin-top: 50px;
+    padding: 0 32px;
+}
+
+.card-columns .card {
+    height: auto;
+    width: auto;
+    position: relative;
+    transform: none;
+    transition: opacity 1000ms ease-in-out, transform 800ms ease-in-out;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
+    border: none;
+}
+
+.card .img-header {
+    position: absolute;
+    padding: 6px 10px;
+    width: 100%;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    box-shadow: 1px 1px 20px black;
+    transition: all 220ms ease-in-out;
+}
+
+.card:hover .img-header {
+    opacity: 1;
+}
+
+.img-header i {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.img-header>.pin {
+    position: absolute;
+    padding: 0 8px;
+    right: 5px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 220ms ease-in-out;
+}
+
+.img-header>.pin i {
+    transform: rotate(25deg);
+}
+
+.img-header>.pin.pinned,
+.img-header>.pin.pinned i {
+    color: #adadad;
+    cursor: default !important;
+}
+
+.img-header>.pin>i.fa-thumb-tack {
+    font-size: 18px;
+}
+
+.img-header>.pin>.pin-text {
+    transform: translateX(-112%);
+    position: absolute;
+    width: max-content;
+    padding: 0 6px;
+    border-radius: 10px;
+    transition: all 220ms ease-in-out;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 220ms ease-in-out;
+}
+
+.delete-categories .btn {
+    border-radius: 20px;
+    padding: 6px 12px;
+    margin: 6px 8px;
+    display: inline-block;
+}
+
+@media screen and (min-width: 576px) {
+    .card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .card-columns {
+        padding: 0;
+    }
+    .collage {
+        padding: 0 50px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+    .collage {
+        padding: 0 100px;
+    }
+}
+
+@media screen and (min-width: 1200px) {  
+    .card-columns {
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+        column-count: 4;
+    }
+    .collage {
+        padding: 0 150px;
+    }
+}
+
+@keyframes load-in {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes load-out {
+    100% {
+        opacity: 0;
+    }
+}
