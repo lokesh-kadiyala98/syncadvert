@@ -5,6 +5,8 @@ import NavBar from '../../components/user/NavBar';
 import Header from '../../components/user/Header';
 import MainTeam from './../../components/user/Team/mainTeam';
 import CategoriesCollage from './../../components/user/Collage/categoriesCollage';
+import Testimonials from '../../components/user/Testimonial';
+import FixedCTA from '../../components/user/FixedCTA';
 import Footer from '../../components/user/Footer';
 
 import { fetchCategories, getCategories } from './../../store/categories';
@@ -26,6 +28,8 @@ const Home = () => {
             <CategoriesCollage
                 categories={categories} 
             />
+            <Testimonials />
+            <FixedCTA />
             <Footer />
         </React.Fragment>
     );

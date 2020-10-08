@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon src/index.js",
     "client": "npm start --prefix client",
+    "start": "node src/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
     "heroku-postbuild": "npm run build"
@@ -24,7 +25,7 @@
     "jwt-decode": "^3.0.0-beta.2",
     "moment": "^2.29.0",
     "mongoose": "^5.10.4",
-    "nodemon": "^2.0.4",
+    "nodemon": "^2.0.6",
     "redis": "^3.0.2",
     "uuid": "^8.3.0",
     "validator": "^13.1.1",

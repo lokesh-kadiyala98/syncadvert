@@ -1,9 +1,10 @@
 const express = require('express')
 const router = express.Router()
 
+const CTA = require('../../../models/cta')
 const { clearCache } = require('../../../services/cache')
 const adminAuth = require('./../../../middleware/adminAuth')
-const CTA = require('../../../models/cta')
+const logger = require('../../../services/logger')
 
 router.post('/cta', adminAuth, async (req, res) => {
     // const cta = new CTA(req.body)
@@ -37,6 +38,12 @@ router.patch('/', adminAuth, async (req, res) => {
         
         clearCache(JSON.stringify({"collection":"ctas"}))
     } catch (e) {
+        const str = e.message 
+        const isMatch = str.match(/CTA validation failed/g)
+        if (isMatch)
+            return res.status(400).send({ message: e.message })
+
+        logger.error(e.message)
         res.status(500).send()
     }
 })

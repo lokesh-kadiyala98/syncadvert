@@ -14,6 +14,16 @@
 	position: absolute;
 }
 
+.loader a {
+	padding: 2px 5px;
+	transition: all 250ms ease-in-out;
+}
+
+.loader a:hover {
+	background-color: #d6cc47;
+	color: #153438;
+}
+
 .loader #sun i {
     position: absolute;
     top: 24%;
@@ -23,7 +33,6 @@
     animation: turn-right 5.25s linear infinite;
 }
 
-/* code for the rings */
 #rings {
 	top: 50%;
 	left: 50%;
@@ -89,7 +98,6 @@
 	margin: -85px 0 0 -85px;
 }
 
-/* animations */
 @-webkit-keyframes rotateR {
 	from{
 		-webkit-transform: rotate(0deg);

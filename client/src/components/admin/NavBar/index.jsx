@@ -40,7 +40,7 @@ const NavBar = (props) => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="adminCTA">
+                    <NavLink to="/adminCTA">
                         <i className="fa fa-link icon"></i>
                         <span>
                             CTA
@@ -48,7 +48,7 @@ const NavBar = (props) => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="adminTeam">
+                    <NavLink to="/adminTeam">
                         <i className="fa fa-user-friends icon"></i>
                         <span>
                             Team
@@ -56,7 +56,7 @@ const NavBar = (props) => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="adminTestimonials">
+                    <NavLink to="/adminTestimonials">
                         <i className="fa fa-quote-left icon" aria-hidden="true"></i>
                         <span>
                             Testimonial
@@ -64,7 +64,7 @@ const NavBar = (props) => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="adminBlog">
+                    <NavLink to="/adminBlog">
                         <i className="fa fa-keyboard icon"></i>
                         <span>
                             Blog
@@ -72,7 +72,7 @@ const NavBar = (props) => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="adminProfile">
+                    <NavLink to="/adminProfile">
                         <i className="fa fa-id-badge icon"></i>
                         <span>
                             Profile

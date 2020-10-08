@@ -83,9 +83,14 @@ class CTAForm extends Form {
                     {this.renderInput('whatsapp', 'Whatsapp', 'number')}
                     
                     <p className="mt-2" style={{fontSize: '16px', color: 'rgb(142 135 46)', marginBottom: '-2em'}}>
-                        Note: Please prepend URLs with 
+                        Please prepend URLs with 
                         <span style={{borderRadius: '5px', backgroundColor: 'rgb(142 135 46)', color: '#21250A', padding: '0 5px', margin: '0 2px'}}>
                             https://www
+                        </span>
+                        <br />
+                        Please prepend mobile number with
+                        <span style={{borderRadius: '5px', backgroundColor: 'rgb(142 135 46)', color: '#21250A', padding: '0 5px', margin: '0 2px'}}>
+                            +91
                         </span>
                     </p>
 

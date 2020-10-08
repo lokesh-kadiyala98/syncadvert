@@ -89,7 +89,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    addTestimonial: testimonal => dispatch(addTestimonial(testimonal)),
+    addTestimonial: testimonial => dispatch(addTestimonial(testimonial)),
     clearErrors: () => dispatch(testimonialsClearErrors())
 })
 

@@ -2,8 +2,9 @@ import React from 'react';
 
 import NavBar from '../../components/user/NavBar';
 import Quote from './../../components/user/Quote';
-import Testimonials from '../../components/user/Testimonial';
+import AboutText from './../../components/user/AboutText';
 import CategoriesMicro from './../../components/user/CategoriesMicro'
+import FixedCTA from './../../components/user/FixedCTA';
 import Footer from '../../components/user/Footer';
 
 const About = () => {
@@ -11,8 +12,9 @@ const About = () => {
         <React.Fragment>
             <NavBar />
             <Quote />
-            <Testimonials />
+            <AboutText />
             <CategoriesMicro />
+            <FixedCTA />
             <Footer />
         </React.Fragment>
     );

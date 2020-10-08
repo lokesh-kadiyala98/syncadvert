@@ -16,18 +16,18 @@ const slice = createSlice({
             state.list = action.payload
             state.loading = false
         },
-        testimonalAdded: (state, action) => {
+        testimonialAdded: (state, action) => {
             state.list = [action.payload, ...state.list]
             state.loading = false
             toast('Testimonial Added')
         },
-        testimonalDeleted: (state, action) => {
+        testimonialDeleted: (state, action) => {
             const {_id} = action.payload
             const list = state.list.filter(e => e._id !== _id)
             state.list = list
             toast('Testimonial Deleted')
         },
-        testimonalUpdated: (state, action) => {
+        testimonialUpdated: (state, action) => {
             const {_id} = action.payload
             const index = state.list.findIndex(e => e._id === _id)
             if (index !== -1)
@@ -48,7 +48,7 @@ const slice = createSlice({
     }
 })
 
-export const { testimonialsFetched, testimonalAdded, testimonalUpdated, testimonalDeleted, testimonialsRequested, testimonialsRequestFailed, testimonialsClearErrors } = slice.actions
+export const { testimonialsFetched, testimonialAdded, testimonialUpdated, testimonialDeleted, testimonialsRequested, testimonialsRequestFailed, testimonialsClearErrors } = slice.actions
 
 export default slice.reducer
 
@@ -70,7 +70,7 @@ export const addTestimonial = (data) => (dispatch, getState) => {
         url: apiEndpoint + '/admin/activities/testimonials',
         method: 'post',
         data: data,
-        onSuccess: testimonalAdded.type,
+        onSuccess: testimonialAdded.type,
         onError: testimonialsRequestFailed.type
     }))
 }
@@ -79,7 +79,7 @@ export const deleteTestimonial = (_id) => (dispatch, getState) => {
     dispatch(apiCallBegan({
         url: apiEndpoint + '/admin/activities/testimonials/' + _id,
         method: 'delete',
-        onSuccess: testimonalDeleted.type,
+        onSuccess: testimonialDeleted.type,
         onError: testimonialsRequestFailed.type
     }))
 }

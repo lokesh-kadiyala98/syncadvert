@@ -25,7 +25,7 @@
     color: #d6cc47a0;
 }
 
-.quote span {
+.quote .highlight {
     position: relative;
     font-weight: 800;
     overflow: hidden;
@@ -38,13 +38,18 @@
     transition: background-position 275ms 200ms ease;
 }
   
-.quote .text:hover span {
+.quote .text:hover .highlight {
     background-position: 0 100%;
 }
 
 .quote cite {
+    margin-top: 20px;
     float: right;
-    font-size: 1.2em;
+    font-size: 1.1em;
+}
+
+.quote cite span {
+    float: right;
 }
 
 @media screen and (min-width: 991px) {
@@ -53,6 +58,7 @@
     }
 
     .quote cite {
+        margin-top: 0;
         font-size: 1.4em;
     }
 }

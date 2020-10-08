@@ -20,15 +20,9 @@ const Header = () => {
             </div>
             <div className="text-center infogram-content" id="container">
                 <div id="inner">
-                    <div className="infogram-content-1">
-                        <p>WE ARE</p><br />
-                        <h1 className="title">SYNCADVERT</h1>
-                    </div>
-                    <div className="infogram-content-2 mt-3 mb-3">
-                        <p>WHAT WE DO</p><br />
-                        <h1>WE CAPTURE</h1><br />
-                        <h1 className="memories-h1">MEMORIES</h1>
-                    </div>
+                    <p>WE ARE</p><br />
+                    <h1 className="title">SYNCADVERT</h1>
+                    <p style={{letterSpacing: '6px'}}>FILMMAKERS <br/> PHOTOGRAPHERS</p>
                 </div>
             </div>
         </header>

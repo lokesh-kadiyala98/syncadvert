@@ -2,17 +2,18 @@ import React from 'react';
 
 import NavBar from '../../components/admin/NavBar'
 import Header from './../../components/admin/Header'
+import BlogComponent from '../../components/admin/Blog';
 import Footer from './../../components/admin/Footer'
-import UnderWork from './../../components/user/UnderWork';
 
-const Blog = () => {
+const Blog = (props) => {
+    const {blogId} = props.match.params
     return ( 
         <React.Fragment>
             <div className="admin-view">
                 <NavBar />
                 <main>
                     <Header />
-                    <UnderWork />
+                    <BlogComponent blogId={blogId} />
                 </main>
             </div>
             <Footer />

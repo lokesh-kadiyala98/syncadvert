@@ -18,6 +18,7 @@ header ul.drop-down {
     top: 100%;
     cursor: pointer;
     display: none;
+    backdrop-filter: blur(4px);
 }
 
 header #settings-toogler {

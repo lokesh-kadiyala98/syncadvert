@@ -35,11 +35,13 @@ function App () {
           <PrivateRoute path="/adminCTA" component={AdminCTA} />
           <PrivateRoute path="/adminTeam" component={AdminTeam} />
           <PrivateRoute path="/adminTestimonials" component={AdminTestimonial} />
+          <PrivateRoute path="/adminBlog/:blogId" component={AdminBlog} />
           <PrivateRoute path="/adminBlog" component={AdminBlog} />
           <PrivateRoute path="/adminProfile" component={AdminProfile} />
           <PrivateRoute exact path="/admin" component={AdminHome} />
           <Route path="/gallery/:category" component={Gallery} />
           <Route path="/gallery" component={Gallery} />
+          <Route path="/blog/:blogId" component={Blog} />
           <Route path="/blog" component={Blog} />
           <Route path="/about" component={About} />
           <Route path="/careers" component={Careers} />

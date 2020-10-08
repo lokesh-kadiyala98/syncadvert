@@ -24,7 +24,7 @@ const Testimonials = () => {
     }
 
     return ( 
-        <section className="testimonal">
+        <section className="testimonial">
             <h1 className="text-center underlined-heading">Testimonials</h1>
 
             <div className="row mb-5">

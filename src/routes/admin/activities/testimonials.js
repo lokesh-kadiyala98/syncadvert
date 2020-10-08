@@ -17,7 +17,6 @@ router.post('/', adminAuth, async (req, res) => {
         
         clearCache(JSON.stringify({"collection":"testimonials"}))
     } catch (e) {
-        console.log(e.message)
         logger.error(e.message)
         res.status(500).send()
     }

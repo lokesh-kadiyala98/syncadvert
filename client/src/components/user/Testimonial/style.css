@@ -1,8 +1,10 @@
 section.user-testimonials {
     background-image: linear-gradient(#15343850, #15343850), 
-    url(https://sync-advert.s3.ap-south-1.amazonaws.com/testimonals-bg.jpg);
-    background-size: cover;
+    url('https://sync-advert.s3.ap-south-1.amazonaws.com/testimonial_BG.jpg');
     background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     margin-top: 20px;
     color: #fff;
     height: 100vh;

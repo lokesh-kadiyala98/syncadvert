@@ -62,7 +62,7 @@ const NavBar = () => {
 
                     </li>
                     <li className="mobile-nav-item p-2">
-                        <NavLink to="/gallery">BLOG</NavLink>
+                        <NavLink to="/blog">BLOG</NavLink>
 
                     </li>
                     <li className="mobile-nav-item p-2">

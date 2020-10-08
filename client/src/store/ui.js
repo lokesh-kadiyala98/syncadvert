@@ -20,7 +20,6 @@ export default slice.reducer
 
 export const changeUi = sortKey => (dispatch, getState) => {
     const ui = {...getState().ui}
-    console.log(ui.sortOrder === 'asc')
     ui.sortOrder = ui.sortOrder === 'asc' ? 'desc' : 'asc'
     ui.sortKey = sortKey
 

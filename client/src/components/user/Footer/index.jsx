@@ -2,8 +2,9 @@ import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import './style.css'
+import { s3BucketName } from './../../../config.json'
 import { fetchCTA, getCTALinks } from './../../../store/cta';
+import './style.css'
 
 const Footer = () => {
     const dispatch = useDispatch()
@@ -136,7 +137,7 @@ const Footer = () => {
                         <div className="row">
                             <div className="col-xl-6 col-lg-6 text-center text-lg-left">
                                 <div className="footer-nav-text">
-                                    <p>Syncadvert</p>
+                                    <p><img src={s3BucketName + 'logo.png'} alt="logo" /> Syncadvert</p>
                                 </div>
                             </div>
                             <div className="col-xl-6 col-lg-6 p-3 text-right">

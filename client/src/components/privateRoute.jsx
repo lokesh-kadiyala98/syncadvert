@@ -15,7 +15,7 @@ const PrivateRoute = ({ component: Component, ...rest}) => {
 
     return (
       <Route {...rest} render={(props) => (
-        auth.isAuthenticated() ? 
+        auth.isAuthenticated() ?
           <Component {...props} /> :
           <React.Fragment>
             <Component {...props} />

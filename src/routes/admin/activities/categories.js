@@ -29,7 +29,6 @@ router.get('/', async (req, res) => {
         
         res.send(categories)
     } catch (e) {
-        console.log(e.message)
         logger.error(e.message)
         res.status(500).send()
     }
@@ -58,7 +57,6 @@ router.patch('/:id', async (req, res) => {
         
         res.send(resData)
     } catch (e) {
-        console.log(e.message)
         logger.error(e.message)
         res.status(500).send()
     }

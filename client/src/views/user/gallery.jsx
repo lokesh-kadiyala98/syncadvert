@@ -1,8 +1,9 @@
 import React from 'react';
 
 import NavBar from '../../components/user/NavBar';
-import Footer from '../../components/user/Footer';
 import Collage from '../../components/user/Collage';
+import FixedCTA from '../../components/user/FixedCTA';
+import Footer from '../../components/user/Footer';
 
 const Gallery = (props) => {
     const { category } = props.match.params
@@ -13,6 +14,7 @@ const Gallery = (props) => {
             <Collage
                 category={category}
             />
+            <FixedCTA />
             <Footer />
         </React.Fragment>
     );

@@ -5,7 +5,7 @@ const CTAScehma = new mongoose.Schema({
     whatsapp: {
         type: Number,
         validate: function(value) {
-            if (value && value.toString().length !== 10)
+            if (value && value.toString().length !== 12)
                 throw new Error('Please provide a valid Contact Number')
         } 
     },

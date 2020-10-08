@@ -27,6 +27,7 @@ const slice = createSlice({
         ctaRequestFailed: (state, action) => {
             state.loading = false
             state.errors = action.payload
+            toast.error(action.payload)
         },
         ctaClearErrors: (state, action) => {
             state.errors = null

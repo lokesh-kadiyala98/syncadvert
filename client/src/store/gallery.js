@@ -13,7 +13,7 @@ const slice = createSlice({
         pagination: {
             category: '',
             page: 0,
-            perPage: 30,
+            perPage: 50,
             allCaughtUp: false
         }
     },
