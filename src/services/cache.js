@@ -26,10 +26,7 @@ mongoose.Query.prototype.exec = async function() {
     const cacheValue = await client.get(redisKey)
 
     if (cacheValue) {
-        console.log("SERVING FROM CACHE", redisKey)
         const doc = JSON.parse(cacheValue)
-        
-        
 
         //hydrating arrays and models
         return Array.isArray(doc) ? doc.map(d => new this.model(d)) : new this.model(doc)  

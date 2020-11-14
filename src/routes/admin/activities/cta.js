@@ -21,7 +21,7 @@ router.post('/cta', adminAuth, async (req, res) => {
 
 router.patch('/', adminAuth, async (req, res) => {
     const updateKeys = Object.keys(req.body)
-    const validUpdateKeys = ['email', 'whatsapp', 'youtube', 'facebook', 'instagram']
+    const validUpdateKeys = ['email', 'whatsapp', 'youtube', 'facebook', 'instagram', 'twitter']
     const isValidUpdate = updateKeys.every(key => validUpdateKeys.includes(key))
     
     if (!isValidUpdate)

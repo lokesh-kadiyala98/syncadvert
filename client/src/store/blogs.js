@@ -21,7 +21,6 @@ const slice = createSlice({
             const index = state.list.findIndex(e => e._id === _id)
             if (index !== -1)
                 state.list[index] = action.payload
-            console.log(index, action.payload)
         },
         blogAdded: (state, action) => {
             state.list = [action.payload, ...state.list]

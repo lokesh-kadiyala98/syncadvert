@@ -9,7 +9,7 @@ import './style.css'
 const Footer = () => {
     const dispatch = useDispatch()
 
-    const {whatsapp, email, facebook, instagram, youtube} = useSelector(getCTALinks)
+    const {whatsapp, email, facebook, instagram, youtube, twitter} = useSelector(getCTALinks)
 
     useEffect(() => {
         dispatch(fetchCTA())
@@ -124,7 +124,7 @@ const Footer = () => {
                                 <div className="footer-social-icons">
                                     <a href={facebook} target="_blank" rel="noopener noreferrer"><i className="fa fa-facebook"></i></a>
                                     <a href={youtube} target="_blank" rel="noopener noreferrer"><i className="fa fa-youtube"></i></a>
-                                    <Link to="#"><i className="fa fa-twitter"></i></Link>
+                                    <a href={twitter} target="_blank" rel="noopener noreferrer"><i className="fa fa-twitter"></i></a>
                                     <a href={instagram} target="_blank" rel="noopener noreferrer"><i className="fa fa-instagram"></i></a>
                                 </div>
                             </div>

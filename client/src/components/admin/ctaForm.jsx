@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 
 import Form from './../Form/form';
 import { getCTAErrors, updateCTA, ctaClearErrors, fetchCTA, getCTALinks } from './../../store/cta';
+import { toast } from 'react-toastify';
 
 class CTAForm extends Form {
     constructor(props) {    
@@ -17,8 +18,9 @@ class CTAForm extends Form {
             instagram: '',
             youtube: '',
             facebook: '',
+            twitter: '',
             email: '',
-            whatsapp: ''
+            whatsapp: '',
         },
         loading: false,
         errors: {} 
@@ -28,6 +30,7 @@ class CTAForm extends Form {
         instagram: Joi.string().allow(''),
         youtube: Joi.string().allow(''),
         facebook: Joi.string().allow(''),
+        twitter: Joi.string().allow(''),
         email: Joi.string().email({ minDomainSegments: 3, tlds: { allow: ['com'] } }).label('Email').min(8).max(30).allow(''),
         whatsapp: Joi.number().allow(''),
     }
@@ -47,13 +50,16 @@ class CTAForm extends Form {
     }
 
     fillState = () => {
-        const {instagram, youtube, facebook, email, whatsapp} = this.props.links
         const data = {...this.state.data}
+        const {instagram, youtube, facebook, email, whatsapp, twitter} = this.props.links
+        
         data.instagram = instagram
         data.youtube = youtube
         data.facebook = facebook
+        data.twitter = twitter
         data.email = email
         data.whatsapp = whatsapp
+
         this.setState({ data })
     }
 
@@ -64,11 +70,13 @@ class CTAForm extends Form {
         
         Object.keys(data).forEach(key => {
             if (data[key] !== links[key])
-                payload[key] = data[key]
+            payload[key] = data[key]
         })
-
+        
         if (Object.keys(payload).length > 0)
             this.props.update(payload)
+        else 
+            toast('Nothing to Update')
     }
 
     render() { 
@@ -79,18 +87,19 @@ class CTAForm extends Form {
                     {this.renderInput('instagram', 'Instagram', 'url')}
                     {this.renderInput('youtube', 'Youtube', 'url')}
                     {this.renderInput('facebook', 'Facebook', 'url')}
+                    {this.renderInput('twitter', 'Twitter', 'url')}
                     {this.renderInput('email', 'Email', 'email')}
                     {this.renderInput('whatsapp', 'Whatsapp', 'number')}
                     
                     <p className="mt-2" style={{fontSize: '16px', color: 'rgb(142 135 46)', marginBottom: '-2em'}}>
                         Please prepend URLs with 
-                        <span style={{borderRadius: '5px', backgroundColor: 'rgb(142 135 46)', color: '#21250A', padding: '0 5px', margin: '0 2px'}}>
+                        <span style={{borderRadius: '5px', backgroundColor: 'rgb(142 135 46)', color: '#21250A', padding: '0 5px', margin: '0 6px'}}>
                             https://www
                         </span>
                         <br />
                         Please prepend mobile number with
-                        <span style={{borderRadius: '5px', backgroundColor: 'rgb(142 135 46)', color: '#21250A', padding: '0 5px', margin: '0 2px'}}>
-                            +91
+                        <span style={{borderRadius: '5px', backgroundColor: 'rgb(142 135 46)', color: '#21250A', padding: '0 5px', margin: '0 6px'}}>
+                            91
                         </span>
                     </p>
 

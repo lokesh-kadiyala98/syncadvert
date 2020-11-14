@@ -5,7 +5,7 @@ import { getCTALinks } from './../../../store/cta';
 import './style.css'
 
 const FixedCTA = () => {
-    const {whatsapp, email, facebook, instagram, youtube} = useSelector(getCTALinks)
+    const {whatsapp, email, facebook, instagram, youtube, twitter} = useSelector(getCTALinks)
 
     return (
         <div className="sbuttons">
@@ -17,6 +17,9 @@ const FixedCTA = () => {
             </a>
             <a href={youtube} target="_blank" rel="noopener noreferrer" className="sbutton youtube" tooltip="YouTube Channel">
                 <i className="fab fa-youtube"></i>
+            </a>
+            <a href={twitter} target="_blank" rel="noopener noreferrer" className="sbutton twitter" tooltip="Twitter">
+                <i className="fab fa-twitter"></i>
             </a>
             <a href={"https://api.whatsapp.com/send?phone="+whatsapp} target="_blank" rel="noopener noreferrer"
                 className="sbutton phone" tooltip="Call">

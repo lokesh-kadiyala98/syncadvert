@@ -40,6 +40,14 @@ const CTAScehma = new mongoose.Schema({
             if (value && !validator.isURL(value))
                 throw new Error('Seems like Instagram URL is not valid')
         }
+    },
+    twitter: {
+        type: String,
+        trim: true,
+        validate: function(value) {
+            if (value && !validator.isURL(value))
+                throw new Error('Seems like Twitter URL is not valid')
+        }
     }
 })
 
