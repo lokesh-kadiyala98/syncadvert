@@ -101,7 +101,11 @@ const Footer = () => {
                                     <i className="fas fa-phone"></i>
                                     <div className="cta-text">
                                         <h4>Contact</h4>
-                                        <span className="text-muted">{whatsapp}</span>
+                                        <span className="text-muted">
+                                            <a href={"https://api.whatsapp.com/send?phone="+whatsapp} target="_blank" rel="noopener noreferrer">
+                                                {whatsapp}
+                                            </a>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +114,11 @@ const Footer = () => {
                                     <i className="fa fa-envelope"></i>
                                     <div className="cta-text">
                                         <h4>Mail us</h4>
-                                        <span className="text-muted">{email}</span>
+                                        <span className="text-muted">
+                                            <a href={"mailto:"+email} target="_blank" rel="noopener noreferrer">
+                                                {email}
+                                            </a>
+                                        </span>
                                     </div>
                                 </div>
                             </div>

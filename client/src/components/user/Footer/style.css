@@ -43,7 +43,8 @@ footer .footer-section .footer-cta .single-cta .cta-text span {
     font-size: 22px;
 }
 .footer-nav-text p img {
-    width: 25px;
+    width: 22px;
+    margin-top: -4px;
 }
 .footer-menu li {
     display: inline-block;
