@@ -55,14 +55,14 @@ const Dashboards = () => {
                 <NavLink to="/adminProfile" className="activity-grid-item" id="profile-grid">
                     <div className="foot-note">
                         <p className="text-light">Profile Settings</p>
-                        <p className="desc">Logout from all devices</p>
+                        <p className="desc">Update Profile</p>
                     </div>
                 </NavLink>
                 
                 <NavLink to="/adminBlog" className="activity-grid-item" id="blog-grid">
                     <div className="foot-note">
                         <p className="text-light">Blog Settings</p>
-                        <p className="desc">Blog Feature Under Work</p>
+                        <p className="desc">Add/Delete Blogs</p>
                     </div>
                 </NavLink>
             </div>

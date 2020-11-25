@@ -17,6 +17,7 @@ const adminImagesRouter = require('./routes/admin/activities/images')
 const adminTeamRouter = require('./routes/admin/activities/team')
 const {router: adminUploadsRouter} = require('./routes/admin/activities/uploads')
 const adminBlogRouter = require('./routes/admin/activities/blogs')
+const adminCareersRouter = require('./routes/admin/activities/careers')
 
 app.use(cors())
 app.use(express.json())
@@ -30,6 +31,7 @@ app.use('/admin/activities/images', adminImagesRouter)
 app.use('/admin/activities/team', adminTeamRouter)
 app.use('/admin/activities/uploads', adminUploadsRouter)
 app.use('/admin/activities/blogs', adminBlogRouter)
+app.use('/admin/activities/careers', adminCareersRouter)
 
 if (['production'].includes(process.env.NODE_ENV)) {
   app.use((req, res, next) => {

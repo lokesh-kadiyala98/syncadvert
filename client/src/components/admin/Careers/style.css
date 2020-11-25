@@ -1,0 +1,26 @@
+.career-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.career-item i {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    display: none;
+    color: #dc3545;
+    font-size: 22px;
+}
+
+.career-item:hover i {
+    display: inline;
+}
+
+.career-item img {
+    height: 150px;
+    width: auto;
+    border-radius: 0%;
+}

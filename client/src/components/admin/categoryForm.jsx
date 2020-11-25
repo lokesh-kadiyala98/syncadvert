@@ -40,7 +40,9 @@ class CategoryForm extends Form {
     handleDeleteCategory = id => {
         if (id === '5f74969346758f507c23c6d7')
             return toast.error('Category Random cannot be DELETED.')
-        this.props.delete(id)
+        
+        if (window.confirm('Do you really want to DELETE the category?'))
+            this.props.delete(id)
     }
 
     render() { 
