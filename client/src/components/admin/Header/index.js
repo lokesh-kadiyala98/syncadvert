@@ -24,6 +24,7 @@ const Header = () => {
                 </label>
                 <ul className="drop-down">
                     <li onClick={() => history.push('/home')}>Home</li>
+                    <li onClick={() => history.push('/adminProfile')}>Profile</li>
                     <li onClick={handleLogout}>Logout</li>
                     <li onClick={handleLogoutAllDevices}>Logout All Devices</li>
                 </ul>

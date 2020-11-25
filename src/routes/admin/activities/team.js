@@ -3,6 +3,7 @@ const router = express.Router()
 
 const adminAuth = require('./../../../middleware/adminAuth')
 const TeamMember = require('./../../../models/teamMember')
+const logger = require('../../../services/logger')
 const { deleteUpload } = require('./../activities/uploads')
 const { clearCache } = require('../../../services/cache')
 
@@ -12,6 +13,7 @@ router.get('/', async (req, res) => {
 
         res.send(teamMembers)
     } catch (e) {
+        logger.error(e.message)
         res.status(500).send()
     }
 })
@@ -27,6 +29,7 @@ router.post('/', adminAuth, async (req, res) => {
     } catch (e) {
         if (e.code === 11000)
             return res.status(400).send({message: "Team Member with the same name exists"})
+        logger.error(e.message)
         return res.status(500).send()
     }
 })
@@ -59,14 +62,15 @@ router.patch('/:id', adminAuth, async (req, res) => {
 
         clearCache(JSON.stringify({"collection":"teammembers"}))
     } catch (e) {
+        logger.error(e.message)
         res.status(500).send()
     }
 })
 
 router.delete('/:id', adminAuth, async (req, res) => {
-    const _id = req.params.id
+    const {id} = req.params
     try {
-        const teamMemeber = await TeamMember.findByIdAndDelete({ _id })
+        const teamMemeber = await TeamMember.findByIdAndDelete(id)
 
         if (!teamMemeber)
             return res.status(404).send()
@@ -77,6 +81,7 @@ router.delete('/:id', adminAuth, async (req, res) => {
         
         clearCache(JSON.stringify({"collection":"teammembers"}))
     } catch (e) {
+        logger.error(e.message)
         res.status(500).send()
     }
 })

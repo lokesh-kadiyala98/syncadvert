@@ -142,7 +142,7 @@ class EditForm extends Form {
                 </p>
 
                 <div className="btn-grp">
-                    {this.renderCancelButton('Cancel', 'btn-cancel')}
+                    {this.renderCancelButton('Close', 'btn-cancel')}
                     {this.renderButton('Save', 'btn-login')}
                 </div>
             </React.Fragment>

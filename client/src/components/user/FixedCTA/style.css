@@ -25,6 +25,10 @@
     transition-delay: 2s;
 }
 
+.sbutton.btn {
+    padding: 0;
+}
+
 .sbutton:active,
 .sbutton:focus,
 .sbutton:hover {

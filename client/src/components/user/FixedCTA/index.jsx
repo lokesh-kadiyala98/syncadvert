@@ -29,9 +29,9 @@ const FixedCTA = () => {
                 tooltip="Mail">
                 <i className="fa fa-envelope"></i>
             </a>
-            <a className="sbutton mainsbutton" tooltip="Contact">
+            <button className="sbutton mainsbutton" tooltip="Contact">
                 <i className="fas fa-hands-helping"></i>
-            </a>
+            </button>
         </div>
     );
 }

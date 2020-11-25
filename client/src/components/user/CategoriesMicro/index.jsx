@@ -19,10 +19,12 @@ const CategoriesMicro = () => {
                 <h3 className="text-center mb-5">Still not sure you could vouch on us? Look at our previous work.</h3>
                 <div className="row">
                     {categories && Object.keys(categories).map(id => 
-                        <Link to={"/gallery/"+id} key={id}>
-                            <img src={s3BucketName + categories[id].pinImg.path} alt={categories[id].name} />
-                            <p className="text-center">{categories[id].name}</p>
-                        </Link>    
+                        categories[id].pinImg &&
+                            <Link to={"/gallery/"+id} key={id}>
+                                <img src={s3BucketName + categories[id].pinImg.path} alt={categories[id].name} />
+                                <p className="text-center">{categories[id].name}</p>
+                            </Link>    
+                        
                     )}
                 </div>
         </section>

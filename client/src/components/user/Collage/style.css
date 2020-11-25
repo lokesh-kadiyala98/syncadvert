@@ -14,8 +14,8 @@
     width: 100%;
 }
 
-.categories.collage .card:hover img {
-    transform: scale(1);
+.categories.collage .card:hover .overlay {
+    opacity: 1 !important;
 }
 
 .collage .text-container {
@@ -41,6 +41,7 @@
 
 .collage .card:hover .text {
     font-size: 120%;
+    opacity: 1 !important;
 }
 
 .card,

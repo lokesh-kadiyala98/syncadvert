@@ -5,7 +5,7 @@ import Header from './../../components/admin/Header/index';
 import CTAForm from './../../components/admin/ctaForm';
 import Footer from './../../components/admin/Footer/index';
 
-const Careers = () => {
+const CTA = () => {
     return (
         <React.Fragment>
             <div className="admin-view">
@@ -20,4 +20,4 @@ const Careers = () => {
     );
 }
  
-export default Careers;
+export default CTA;

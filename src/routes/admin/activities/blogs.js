@@ -6,10 +6,26 @@ const Blog = require('../../../models/blog')
 const logger = require('../../../services/logger')
 const { clearCache } = require('../../../services/cache')
 
+router.post('/', adminAuth, async (req, res) => {
+    try {
+        const blog = new Blog(req.body)
+
+        await blog.save()
+        
+        res.status(201).send(blog)
+
+        clearCache(JSON.stringify({"collection":"blogs"}))
+    } catch (e) {
+        logger.error(e.message)
+        res.status(500).send()
+    }
+})
+
 router.get('/', async (req, res) => {
     try {
         const blogs = await Blog.find({})
             .select({ body: 0 })
+            .cache()
 
         res.send(blogs)
     } catch (e) {
@@ -27,19 +43,6 @@ router.get('/:id', async (req, res) => {
             res.status(404).send({message: "Blog Not Found"})
 
         res.send(blog)
-    } catch (e) {
-        logger.error(e.message)
-        res.status(500).send()
-    }
-})
-
-router.post('/', adminAuth, async (req, res) => {
-    try {
-        const blog = new Blog(req.body)
-
-        await blog.save()
-        
-        res.status(201).send(blog)
     } catch (e) {
         logger.error(e.message)
         res.status(500).send()

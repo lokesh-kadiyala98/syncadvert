@@ -12,6 +12,7 @@
 }
 
 .admin-navbar {
+    overflow: auto;
     display: flex;
     flex-direction: column;
     height: fit-content;

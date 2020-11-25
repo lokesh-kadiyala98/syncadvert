@@ -72,10 +72,10 @@ const NavBar = (props) => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/adminProfile">
-                        <i className="fa fa-id-badge icon"></i>
+                    <NavLink to="/adminCareers">
+                        <i className="fas fa-graduation-cap icon"></i>
                         <span>
-                            Profile
+                            Careers
                         </span>
                     </NavLink>
                 </li>

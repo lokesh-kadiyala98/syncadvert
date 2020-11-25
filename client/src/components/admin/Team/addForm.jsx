@@ -47,6 +47,18 @@ class AddForm extends Form {
             })
     }
 
+    handleImageUploadSuccess = (img) => {
+        const data = {...this.state.data}
+        data.img = img 
+        this.setState({ data })
+    }
+
+    handleImageUploadRevert = () => {
+        const data = {...this.state.data}
+        data.img = '' 
+        this.setState({ data })
+    }
+
     doSubmit = async () => {
         // this.props.clearErrors()
         
@@ -68,18 +80,6 @@ class AddForm extends Form {
         this.props.addMember(payload)
 
         this.setState(this.baseState)
-    }
-
-    handleImageUploadSuccess = (img) => {
-        const data = {...this.state.data}
-        data.img = img 
-        this.setState({ data })
-    }
-
-    handleImageUploadRevert = () => {
-        const data = {...this.state.data}
-        data.img = '' 
-        this.setState({ data })
     }
 
     render() {
@@ -126,7 +126,7 @@ class AddForm extends Form {
                 </p>
 
                 <div className="btn-grp">
-                    {this.renderCancelButton('Cancel', 'btn-cancel')}
+                    {this.renderCancelButton('Close', 'btn-cancel')}
                     {this.renderButton('Add', 'btn-login')}
                 </div>
                 

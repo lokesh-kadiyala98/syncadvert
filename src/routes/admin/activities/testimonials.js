@@ -34,8 +34,9 @@ router.get('/', async (req, res) => {
 })
 
 router.delete('/:id', adminAuth, async (req, res) => {
+    const {id} = req.params
     try {
-        const testimonial = await Testimonial.findByIdAndDelete(req.params.id)
+        const testimonial = await Testimonial.findByIdAndDelete(id)
 
         if (!testimonial)
             res.status(404).send({ message: 'Testimonail Not Found'})

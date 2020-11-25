@@ -16,6 +16,7 @@ import AdminCTA from './views/admin/cta'
 import AdminTeam from './views/admin/team'
 import AdminTestimonial from './views/admin/testimonial';
 import AdminBlog from './views/admin/blog'
+import AdminCareers from './views/admin/careers'
 import AdminProfile from './views/admin/profile'
 
 import configureStore from './store/configureStore';
@@ -38,6 +39,7 @@ function App () {
           <PrivateRoute path="/adminBlog/:blogId" component={AdminBlog} />
           <PrivateRoute path="/adminBlog" component={AdminBlog} />
           <PrivateRoute path="/adminProfile" component={AdminProfile} />
+          <PrivateRoute path="/adminCareers" component={AdminCareers} />
           <PrivateRoute exact path="/admin" component={AdminHome} />
           <Route path="/gallery/:category" component={Gallery} />
           <Route path="/gallery" component={Gallery} />

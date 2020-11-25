@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import { toast } from 'react-toastify';
 import axios from 'axios'
 import { FilePond, registerPlugin } from 'react-filepond';
@@ -20,12 +20,7 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginFileValidateTyp
 
 const UploadImage = ({ allowMultiple, labelIdle, onSuccess, onRevert, nameSpace, aspectRatio=null, outputQuality=null }) => {
     const [files, setFiles] = useState([])
-    const [verbose, setVerbose] = useState('')
     const [loading, setLoading] = useState(false)
-    
-    useEffect(() => {
-        setVerbose('')
-    }, [])
     
     return ( 
         <div className="row">
@@ -57,19 +52,16 @@ const UploadImage = ({ allowMultiple, labelIdle, onSuccess, onRevert, nameSpace,
                             return toast.error('Image File Please')
                             
                             setLoading(true)
-                            setVerbose('Fetching Signed URL')
                             const {data: fileMetadata} = await httpService.get(apiEndpoint + '/admin/activities/uploads/signed_url', {
                                 params: {
                                     fileType,
                                     nameSpace
                                 }
                             })
-                            setVerbose('Signed URL Fetched')
                             
                             let axiosInstance = axios.create()
                             delete axiosInstance.defaults.headers['Authorization']
                                     
-                            setVerbose('Attempting Image Upload')
                             const s3PutRes = await axiosInstance.put(fileMetadata.signedURL, file, {
                                 headers: {
                                     'Content-Type': fileType,
@@ -80,7 +72,6 @@ const UploadImage = ({ allowMultiple, labelIdle, onSuccess, onRevert, nameSpace,
                             if (s3PutRes.status === 200) {
                                 load(fileMetadata.filePath)
                                 setLoading(false)
-                                setVerbose('File Uploaded to Cloud. Click on `Save`.')
 
                                 if(onSuccess)
                                     onSuccess(fileMetadata.filePath)
@@ -91,7 +82,6 @@ const UploadImage = ({ allowMultiple, labelIdle, onSuccess, onRevert, nameSpace,
                                 if (onRevert)
                                     onRevert(filePath)
                                     
-                                setVerbose('')
                                 httpService.delete(apiEndpoint + '/admin/activities/uploads', {
                                     params: {
                                         Key: filePath
@@ -109,7 +99,6 @@ const UploadImage = ({ allowMultiple, labelIdle, onSuccess, onRevert, nameSpace,
                         </span> :
                         null
                     }
-                    <span className="text-muted">{verbose}</span>
                 </div>
 
             </div>

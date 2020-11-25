@@ -6,6 +6,7 @@ import CTAReducer from './cta'
 import teamReducer from './team'
 import testimonialsReducer from './testimonials'
 import blogsReducer from './blogs'
+import careersReducer from './careers'
 
 export default combineReducers({
     categories: categoriesReducer,
@@ -13,5 +14,6 @@ export default combineReducers({
     CTA: CTAReducer,
     team: teamReducer,
     testimonials: testimonialsReducer,
-    blogs: blogsReducer
+    blogs: blogsReducer,
+    careers: careersReducer
 })
