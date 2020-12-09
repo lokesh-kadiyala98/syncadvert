@@ -69,7 +69,7 @@
 }
 
 .form-group {
-    margin-top: 36px;
+    margin-top: 26px;
     position: relative;
 }
 
@@ -85,6 +85,7 @@
     color: #c4c4c4;
     resize: none;
     border: 1px solid #c4c4c4;
+    margin-top: 40px;
 }
 
 .form-group textarea:focus,
@@ -97,11 +98,8 @@
     box-shadow: none;
 }
 
-.form-group textarea:focus + label,
-.form-group textarea:valid + label {
-    transform: translateY(-150%);
-    font-size: 14px;
-    color: #D6CC47;
+.form-group.textarea label {
+    transform: translateY(-110%);
 }
 
 .btn-grp {

@@ -19,6 +19,10 @@ const {router: adminUploadsRouter} = require('./routes/admin/activities/uploads'
 const adminBlogRouter = require('./routes/admin/activities/blogs')
 const adminCareersRouter = require('./routes/admin/activities/careers')
 
+const Admin = require('./models/admin')
+
+const { sendContactMail } = require('./emails/contact')
+
 app.use(cors())
 app.use(express.json())
 
@@ -32,6 +36,19 @@ app.use('/admin/activities/team', adminTeamRouter)
 app.use('/admin/activities/uploads', adminUploadsRouter)
 app.use('/admin/activities/blogs', adminBlogRouter)
 app.use('/admin/activities/careers', adminCareersRouter)
+
+app.post('/admin/sendContactMail', async (req, res) => {
+  try {
+    const admin = await Admin.find({}, 'email name')
+        
+    sendContactMail(admin[0].email, admin[0].name, req.body)
+    
+    res.send({ message: 'Sent!!!' })
+  } catch (e) {
+    console.log(e.message)
+    res.status(500).send(e.message)
+  }
+})
 
 if (['production'].includes(process.env.NODE_ENV)) {
   app.use((req, res, next) => {

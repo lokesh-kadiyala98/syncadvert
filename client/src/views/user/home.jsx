@@ -10,6 +10,7 @@ import FixedCTA from '../../components/user/FixedCTA';
 import Footer from '../../components/user/Footer';
 
 import { fetchCategories, getCategories } from './../../store/categories';
+import Contact from '../../components/user/Contact';
 
 const Home = () => {
     const dispatch = useDispatch()
@@ -29,6 +30,7 @@ const Home = () => {
                 categories={categories} 
             />
             <Testimonials />
+            <Contact />
             <FixedCTA />
             <Footer />
         </React.Fragment>
