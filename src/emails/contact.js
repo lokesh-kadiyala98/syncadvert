@@ -11,10 +11,10 @@ const sendContactMail = (adminEmail, adminName, { name, email, contact, occasion
             html: `
                 <h2>Hi ${adminName}, ${name} wants to get in touch.</h2>
                 <p>Contact No: ${contact || 'NA'}</p>
-                <p>Email: ${email}</p>
-                <p>Event: ${occasion}</p>
-                <p>Reference: ${reference}</p>
-                <p>Message: ${message}</p>    
+                <p>Email: ${email || 'NA'}</p>
+                <p>Event: ${occasion || 'NA'}</p>
+                <p>Reference: ${reference || 'NA'}</p>
+                <p>Message: ${message || 'NA'}</p>    
             `
         })
     } catch (e) {
