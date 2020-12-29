@@ -69,7 +69,7 @@ const MainTeam = () => {
                                                         Object.keys(teamMember.socialLinks[key]).map(link => {
                                                             if (link !== '_id')
                                                                 return <li key={teamMember.socialLinks[key]._id}>
-                                                                    <a href={teamMember.socialLinks[key][link]}>
+                                                                    <a target="_blank" without rel="noopener noreferrer" href={teamMember.socialLinks[key][link]}>
                                                                         <i className={"fa fa-"+link}></i>
                                                                     </a>
                                                                 </li>

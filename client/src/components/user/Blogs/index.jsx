@@ -7,6 +7,8 @@ import Loader from '../../Loader'
 
 import {s3BucketName} from './../../../config.json'
 
+import './style.css'
+
 const Blog = ({ blogId }) => {
     const [blog, setBlog] = useState({})
     const [loading, isLoading] = useState(true)

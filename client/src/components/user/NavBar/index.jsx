@@ -35,7 +35,7 @@ const NavBar = () => {
                         <NavLink to="/gallery">GALLERY</NavLink>
                     </li>
                     <li className="nav-list-item">
-                        <NavLink to="/blog">BLOG</NavLink>
+                        <NavLink to="/blogs">BLOGS</NavLink>
                     </li>
                     <li className="nav-list-item">
                         <NavLink to="/about">ABOUT</NavLink>
@@ -62,7 +62,7 @@ const NavBar = () => {
 
                     </li>
                     <li className="mobile-nav-item p-2">
-                        <NavLink to="/blog">BLOG</NavLink>
+                        <NavLink to="/blogs">BLOGS</NavLink>
 
                     </li>
                     <li className="mobile-nav-item p-2">

@@ -19,7 +19,7 @@ const CategoriesCollage = ({categories}) => {
         <section className="showcase set-padding">
             <h2 className="text-center underlined-heading">Our Finest Collection</h2>
 
-            <div className="card-columns categories collage">
+            <div className="card-columns categories collage mt-5">
 
                 {categories && Object.keys(categories).map(id =>  
                     {return categories[id].pinImg && 
@@ -46,7 +46,7 @@ const CategoriesCollage = ({categories}) => {
                             </div>
                         </div>
                     <div className="overlay" style={{opacity: '0'}}></div>
-                    <img className="card-img-top img-fluid" src={s3BucketName + "gallery/pexels-ginu-plathottam-165939.jpg"} alt="gallery" />
+                    <img className="card-img-top img-fluid" src={s3BucketName + "gallery/7da06df0-49bb-11eb-912a-9b4dce663092.jpeg"} alt="gallery" />
                 </div>
             </div>
 

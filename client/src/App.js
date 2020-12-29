@@ -3,26 +3,27 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import { Provider } from 'react-redux'
 
-import PrivateRoute from './components/privateRoute'
-import Home from './views/user/home';
-import Gallery from './views/user/gallery';
-import Blog from './views/user/blog';
-import About from './views/user/about';
-import Careers from './views/user/careers';
-import NotFound from './components/user/NotFound';
-import AdminHome from './views/admin/home'
-import AdminGallery from './views/admin/gallery'
-import AdminCTA from './views/admin/cta'
-import AdminTeam from './views/admin/team'
-import AdminTestimonial from './views/admin/testimonial';
-import AdminBlog from './views/admin/blog'
-import AdminCareers from './views/admin/careers'
-import AdminProfile from './views/admin/profile'
-
 import configureStore from './store/configureStore';
 
 import 'react-toastify/dist/ReactToastify.css';
 import ScrollToTop from './components/scrollToTop';
+import Loader from './components/Loader';
+
+const PrivateRoute = React.lazy(() => import('./components/privateRoute'));
+const Home = React.lazy(() => import('./views/user/home'));
+const Gallery = React.lazy(() => import('./views/user/gallery'));
+const Blog = React.lazy(() => import('./views/user/blog'));
+const About = React.lazy(() => import('./views/user/about'));
+const Careers = React.lazy(() => import('./views/user/careers'));
+const NotFound = React.lazy(() => import('./components/user/NotFound'));
+const AdminHome = React.lazy(() => import('./views/admin/home'));
+const AdminGallery = React.lazy(() => import('./views/admin/gallery'));
+const AdminCTA = React.lazy(() => import('./views/admin/cta'));
+const AdminTeam = React.lazy(() => import('./views/admin/team'));
+const AdminTestimonial = React.lazy(() => import('./views/admin/testimonial'));
+const AdminBlog = React.lazy(() => import('./views/admin/blog'));
+const AdminCareers = React.lazy(() => import('./views/admin/careers'));
+const AdminProfile = React.lazy(() => import('./views/admin/profile'));
 
 const store = configureStore()
 
@@ -31,6 +32,7 @@ function App () {
     <Provider store={store}>
       <ToastContainer />
       <ScrollToTop />
+      <React.Suspense fallback={<Loader />}>
         <Switch>
           <PrivateRoute path="/adminGallery" component={AdminGallery} />
           <PrivateRoute path="/adminCTA" component={AdminCTA} />
@@ -44,7 +46,7 @@ function App () {
           <Route path="/gallery/:category" component={Gallery} />
           <Route path="/gallery" component={Gallery} />
           <Route path="/blog/:blogId" component={Blog} />
-          <Route path="/blog" component={Blog} />
+          <Route path="/blogs" component={Blog} />
           <Route path="/about" component={About} />
           <Route path="/careers" component={Careers} />
           <Route path="/not-found" component={NotFound} />
@@ -52,6 +54,7 @@ function App () {
           <Route exact path="/" component={Home} />
           <Redirect to="/not-found" />  
         </Switch>
+      </React.Suspense>
     </Provider>
   )
 }

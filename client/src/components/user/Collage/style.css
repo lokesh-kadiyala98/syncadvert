@@ -48,3 +48,49 @@
 .card img {
     border-radius: 10px;
 }
+
+@media screen and (min-width: 576px) {
+    .card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .card-columns {
+        padding: 0;
+    }
+    .collage {
+        padding: 0 50px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+    .collage {
+        padding: 0 100px;
+    }
+}
+
+@media screen and (min-width: 1200px) {  
+    .card-columns {
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+        column-count: 4;
+    }
+
+    .card-columns-3 {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+
+    .collage {
+        padding: 0 150px;
+    }
+}

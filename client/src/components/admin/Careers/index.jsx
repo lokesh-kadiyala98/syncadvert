@@ -27,7 +27,7 @@ const AdminCareers = () => {
                     <div className="col-12 mb-5 add-member">
                         <button onClick={() => formToogler(true)} className="btn-dbl btn btn-lg">
                             New Role
-                            <i className="fa fa-plus"></i>
+                            <i className="ml-2 fa fa-plus"></i>
                         </button>
                     </div>
                 </div>
