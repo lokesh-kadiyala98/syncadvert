@@ -3,9 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Modal from './../../Modal';
 import Form from './form'
-import './style.css'
 import { fetchCareers, getCareers } from './../../../store/careers';
 import ItemList from './itemList';
+
+import './style.css'
+import './../style.css'
 
 const AdminCareers = () => {
     const [form, formToogler] = useState(false)
@@ -24,9 +26,9 @@ const AdminCareers = () => {
             <section className="mt-5">
 
                 <div className="row">
-                    <div className="col-12 mb-5 add-member">
+                    <div className="col-12 mb-5 add">
                         <button onClick={() => formToogler(true)} className="btn-dbl btn btn-lg">
-                            New Role
+                            Add Role
                             <i className="ml-2 fa fa-plus"></i>
                         </button>
                     </div>

@@ -6,7 +6,9 @@ import { s3BucketName } from './../../../config.json'
 import AddForm from './addForm';
 import EditForm from './editForm';
 import Modal from './../../Modal';
+
 import './style.css'
+import './../style.css'
 
 const Team = () => {
     const dispatch = useDispatch()
@@ -32,7 +34,7 @@ const Team = () => {
             <section className="team">
 
                 <div className="row">
-                    <div className="col-12 mb-3 mt-3 add-member">
+                    <div className="col-12 mb-3 mt-3 add">
                         <button onClick={() => addMemberToogler(true)} className="btn-dbl btn btn-lg">
                             Add Member
                             <i className="fa fa-plus"></i>

@@ -23,6 +23,8 @@ const BlogList = () => {
 
     return ( 
         <section className="admin-blogs">
+            <h1 className="text-center underlined-heading mb-5">Blogs</h1>
+
                 <div className="card-columns">
                     {blogList.map(blog =>
                         <Link to={"/adminBlog/" + blog._id} key={blog._id} className="card">

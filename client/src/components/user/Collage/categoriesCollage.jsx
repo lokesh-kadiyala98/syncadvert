@@ -11,8 +11,9 @@ const CategoriesCollage = ({categories}) => {
     const onCategoryClick = (id) => {
         setClickedCategory(id)
         
-        if (clickedCategory === id)
-            history.push(`/gallery/${id}`)
+        if (clickedCategory === id){
+            id !== 'All Images' ? history.push(`/gallery/${id}`) : history.push(`/gallery`)
+        }
     }
 
     return ( 
@@ -39,13 +40,17 @@ const CategoriesCollage = ({categories}) => {
                     }
                 )}
 
-                <div onClick={() => history.push('/gallery')} className="card">
-                        <div className="text-container">
-                            <div className="text" style={{opacity: '0'}}>
-                                All Images
-                            </div>
+                <div onClick={() => onCategoryClick('All Images')} className="card">
+                    <div className="text-container">
+                        <div className="text"
+                            style={{opacity: (clickedCategory === 'All Images' ? '1': '0')}}
+                        >
+                            All Images
                         </div>
-                    <div className="overlay" style={{opacity: '0'}}></div>
+                    </div>
+                    <div className="overlay" 
+                        style={{opacity: (clickedCategory === 'All Images' ? '1': '0')}}
+                    ></div>
                     <img className="card-img-top img-fluid" src={s3BucketName + "gallery/7da06df0-49bb-11eb-912a-9b4dce663092.jpeg"} alt="gallery" />
                 </div>
             </div>

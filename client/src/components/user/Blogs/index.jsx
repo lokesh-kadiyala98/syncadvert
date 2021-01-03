@@ -42,7 +42,7 @@ const Blog = ({ blogId }) => {
             <div className="blog-content">
                                     
                 <div className="blog-header mt-5 mb-3">
-                    <Link className="btn btn-brand text-dark" to="/blog">
+                    <Link className="btn btn-brand text-dark" to="/blogs">
                         <i className="fas fa-arrow-left mr-2"></i> Blogs
                     </Link>
                 </div>

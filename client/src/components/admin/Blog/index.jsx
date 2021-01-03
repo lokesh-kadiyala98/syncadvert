@@ -5,6 +5,7 @@ import CreateBlog from './createBlog';
 import EditBlog from './editBlog';
 
 import './style.css'
+import './../style.css'
 
 const Blog = (props) => {
     const {blogId} = props

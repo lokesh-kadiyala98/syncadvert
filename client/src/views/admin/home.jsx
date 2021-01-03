@@ -1,9 +1,9 @@
 import React from 'react';
 
 import NavBar from '../../components/admin/NavBar';
-import Dashboards from './../../components/admin/Dashboards/dashboards';
+import Dashboards from './../../components/admin/Dashboards';
 import Footer from '../../components/admin/Footer';
-import Header from './../../components/admin/Header/index';
+import Header from './../../components/admin/Header';
 
 const Home = () => {
     return ( 

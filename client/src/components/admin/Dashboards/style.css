@@ -1,101 +1,3 @@
-main {
-    margin-left: 14.75em;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-right: 1em;
-    border-radius: 2.5em;
-    width: 100%;
-    background-color: #21250A;
-    color: #bdc3c7;
-    padding: 2.3em;
-}
-
-main header .activity {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    position: relative;
-}
-
-main header .activity .dropdown {
-    margin-right: 25px;
-}
-
-main header .activity .dropdown #sort {
-    border: none;
-    background: transparent;
-    color: inherit;
-}
-
-main header .activity .dropdown #sort:focus {
-    border: none;
-    outline: none;
-}
-
-main header .activity .notification-icon {
-    border: 1px solid transparent;
-    border-radius: 50%;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: .3s;
-}
-
-main header .activity .notification-icon:hover {
-    border: 1px solid #353535;
-}
-
-main header .activity span[tooltip]:after {
-    font-weight: 600;
-    border-radius: 2px;
-    background-color: #58585846;
-    backdrop-filter: blur(4px);
-    content: attr(tooltip);
-    font-size: 14px;
-    visibility: hidden;
-    opacity: 0;
-    padding: 5px 7px;
-    margin-left: 1px;
-    position: absolute;
-    top: 50%;
-    white-space: nowrap;
-}
-
-main header .activity span[tooltip]:hover:before,
-main header .activity span[tooltip]:hover:after {
-    visibility: visible;
-    opacity: 1;
-}
-
-main header section button {
-    background-color: transparent;
-    border: 1px solid #353535 !important;
-    color: rgb(200, 200, 200);
-    margin-left: 50px;
-}
-
-@media screen and (max-width: 1200px) {
-    main {
-        margin-left: 12.75em;
-    }
-}
-
-@media screen and (max-width: 768px) {
-
-    /* Tablet (768px) */
-    main {
-        margin-right: 0;
-        margin-left: 0;
-        margin-top: 0;
-        border-radius: 0;
-        padding: .2em;
-    }
-
-    main header {
-        margin-bottom: 0em;
-        padding: 1em;
-    }
-}
-
 .activity-grid {
     display: grid;
     grid-gap: 1em;
@@ -112,7 +14,7 @@ main header section button {
     margin-bottom: 0;
 }
 
-.activity-grid a p.desc {
+.activity-grid a p.description {
     font-size: 14px;
 }
 
@@ -172,12 +74,12 @@ main header section button {
     transition: all .5s .3s;
 }
 
-.activity-grid .activity-grid-item .foot-note .desc {
+.activity-grid .activity-grid-item .foot-note .description {
     transform: translateY(50px);
     transition: all 0.3s;
 }
 
-.activity-grid .activity-grid-item:hover .desc {
+.activity-grid .activity-grid-item:hover .description {
     transform: translateY(0);
 }
 
@@ -341,7 +243,7 @@ main header section button {
         padding: 10px;
     }
     
-    .activity-grid .activity-grid-item .foot-note .desc {
+    .activity-grid .activity-grid-item .foot-note .description {
         transform: translateY(0);   
     }
     

@@ -6,7 +6,9 @@ import Modal from '../../Modal';
 import { fetchTestimonials, getTestimonials, deleteTestimonial } from './../../../store/testimonials';
 
 import {s3BucketName} from './../../../config.json'
+
 import './style.css'
+import './../style.css'
 
 const Testimonials = () => {
     const dispatch = useDispatch()
@@ -28,7 +30,7 @@ const Testimonials = () => {
             <h1 className="text-center underlined-heading">Testimonials</h1>
 
             <div className="row mb-5">
-                <div className="col-12 mb-3 mt-3 add-member">
+                <div className="col-12 mb-3 mt-3 add">
                     <button onClick={() => addTestimonialToogler(true)} className="btn-dbl btn btn-lg">
                         Add Testimonial
                         <i className="fa fa-plus"></i>

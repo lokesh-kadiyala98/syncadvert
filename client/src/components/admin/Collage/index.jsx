@@ -9,8 +9,10 @@ import Loader from './../../Loader';
 
 import { deleteImage, editImage, fetchImages, getImages } from '../../../store/gallery';
 import { s3BucketName } from '../../../config.json'
-import './style.css'
 import { editCategory, fetchCategories, getCategories } from './../../../store/categories';
+
+import './style.css'
+import './../style.css'
 
 const Collage = () => {
     const dispatch = useDispatch()
