@@ -10,18 +10,9 @@
 	width: 100px;
 	height: 100px;
 }
+
 #sun *, #sun *:before, #sun *:after {
 	position: absolute;
-}
-
-.loader a {
-	padding: 2px 5px;
-	transition: all 250ms ease-in-out;
-}
-
-.loader a:hover {
-	background-color: #d6cc47;
-	color: #153438;
 }
 
 .loader #sun i {
