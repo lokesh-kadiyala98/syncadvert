@@ -81,45 +81,6 @@ span.tab {
   margin-top: 10px;
 }
 
-.btn-dbl {
-  background-color: transparent;
-  color: #bdc3c7;
-  width: fit-content;
-}
-
-.btn-dbl::after, 
-.btn-dbl::before {
-  border: 2px solid #bdc3c7;
-  content: '';
-  position: absolute;
-  width: calc(100% - 4px);
-  height: calc(100% - 4px);
-  left: 0;
-  bottom: 0;
-  transition: all .25s ease;
-}
-
-.btn-dbl:hover::after {
-  transform: translate(-5px, -5px);
-}
-
-.btn-dbl:hover::before {
-  transform: translate(5px, 5px);
-}
-
-.btn-dbl i {
-  margin-left: 10px;
-}
-
-.add {
-  display: flex;
-  justify-content: center;
-}
-
-.add button {
-  position: relative;
-}
-
 .spinner-border{
   display: inline-block;
   width: 2rem;
@@ -145,12 +106,22 @@ span.tab {
 } 
 
 .btn-brand {
-  background-color: #d6c942;
+  background-color: #d6c942c0;
+  transition: all .2s;
+}
+
+.btn-brand i {
+  transition: all .2s;
 }
 
 .btn-brand:hover {
-  background-color: #c2b73b;  
+  background-color: #d6c942;  
 }
+
+.btn-brand:hover i {
+  transform: translateX(-2px);
+}
+
 /* fas only works with font-weight set to 600 */
 .fas {
   font-weight: 600 !important;

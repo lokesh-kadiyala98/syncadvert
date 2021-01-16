@@ -84,3 +84,42 @@ main header section button {
         padding: 1em;
     }
 }
+
+.btn-dbl {
+    background-color: transparent;
+    color: #bdc3c7;
+    width: fit-content;
+}
+
+.btn-dbl::after,
+.btn-dbl::before {
+    border: 2px solid #bdc3c7;
+    content: '';
+    position: absolute;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    left: 0;
+    bottom: 0;
+    transition: all .25s ease;
+}
+
+.btn-dbl:hover::after {
+    transform: translate(-5px, -5px);
+}
+
+.btn-dbl:hover::before {
+    transform: translate(5px, 5px);
+}
+
+.btn-dbl i {
+    margin-left: 10px;
+}
+
+.add {
+    display: flex;
+    justify-content: center;
+}
+
+.add button {
+    position: relative;
+}

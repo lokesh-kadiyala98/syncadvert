@@ -2,10 +2,24 @@
     background-color: #f6f7fe;
     line-height: 1.6;
     word-spacing: 4px;
-    font-size: 21px;
+    font-size: 19px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .about-text .container {
     max-width: 768px;
+}
+
+.about-text p .job-title {
+    font-size: 16px;
+}
+
+@media screen and (min-width: 768px) {
+    .about-text {
+        font-size: 21px;
+    }
+
+    .about-text p .job-title {
+        font-size: 18px;
+    }
 }
