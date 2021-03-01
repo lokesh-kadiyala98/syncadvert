@@ -54,6 +54,8 @@ if (['production'].includes(process.env.NODE_ENV)) {
   app.use((req, res, next) => {
     if (req.header('x-forwarded-proto') !== 'https' && process.env.HTTPS_REDIRECT === 'true')
       res.redirect(`https://${req.header('host')}${req.url}`)
+    else if (req.header('x-forwarded-proto') !== 'https' && process.env.HTTPS_REDIRECT === 'false')
+      res.redirect(`http://${req.header('host')}${req.url}`)
     else
       next()
   })
