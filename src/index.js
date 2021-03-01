@@ -52,7 +52,7 @@ app.post('/admin/sendContactMail', async (req, res) => {
 
 if (['production'].includes(process.env.NODE_ENV)) {
   app.use((req, res, next) => {
-    if (req.header('x-forwarded-proto') !== 'https')
+    if (req.header('x-forwarded-proto') !== 'https' && process.env.HTTPS_REDIRECT === 'true')
       res.redirect(`https://${req.header('host')}${req.url}`)
     else
       next()
