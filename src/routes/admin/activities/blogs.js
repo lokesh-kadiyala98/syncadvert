@@ -12,9 +12,9 @@ router.post('/', adminAuth, async (req, res) => {
 
         await blog.save()
         
-        res.status(201).send(blog)
-
         clearCache(JSON.stringify({"collection":"blogs"}))
+        
+        res.status(201).send(blog)
     } catch (e) {
         logger.error(e.message)
         res.status(500).send()
@@ -56,7 +56,9 @@ router.delete('/:id', adminAuth, async (req, res) => {
 
         if (!blog)
             res.status(404).send({message: "Blog Not Found"})
-
+            
+        clearCache(JSON.stringify({"collection":"blogs"}))
+        
         res.send(blog)
     } catch (e) {
         logger.error(e.message)
@@ -66,7 +68,7 @@ router.delete('/:id', adminAuth, async (req, res) => {
 
 router.patch('/:id', adminAuth, async (req, res) => {
     const updateKeys = Object.keys(req.body)
-    const validUpdateKeys = ['body', 'title', 'headerImg', 'subTitle']
+    const validUpdateKeys = ['body', 'title', 'headerImg', 'subTitle', 'published']
     const isValidUpdate = updateKeys.every(key => validUpdateKeys.includes(key))
     
     if (!isValidUpdate)
