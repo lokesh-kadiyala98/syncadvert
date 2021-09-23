@@ -48,3 +48,19 @@
     margin: 32px 0;
     padding: 10px 20px;
 }
+
+.blog-save-btn {
+    border: 1px solid #999;
+    margin: 10px;
+
+}
+
+.public-DraftEditor-content {
+    min-height: 300px;
+}
+
+.blog-save-btn .spinner-border-sm {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0;
+}

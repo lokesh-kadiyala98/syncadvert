@@ -41,6 +41,14 @@ const slice = createSlice({
                 
             toast('Blog Updated')
         },
+        blogUpdatedNoToast: (state, action) => {
+            const {_id} = action.payload
+            const index = state.list.findIndex(e => e._id === _id)
+            if (index !== -1)
+                state.list[index] = action.payload
+            else
+                state.list = [action.payload, ...state.list]
+        },
         blogsRequested: (state, action) => {
             state.loading = true
         },
@@ -54,7 +62,7 @@ const slice = createSlice({
     }
 })
 
-export const { blogsFetched, blogFetched, blogAdded, blogUpdated, blogDeleted, blogsRequested, blogsRequestFailed, blogsClearErrors } = slice.actions
+export const { blogsFetched, blogFetched, blogAdded, blogUpdated, blogUpdatedNoToast, blogDeleted, blogsRequested, blogsRequestFailed, blogsClearErrors } = slice.actions
 
 export default slice.reducer
 
@@ -101,12 +109,12 @@ export const deleteBlog = _id => (dispatch, getState) => {
     }))
 }
 
-export const editBlog = (id, blog) => (dispatch, getState) => {
+export const editBlog = (id, blog, toast=true) => (dispatch, getState) => {
     dispatch(apiCallBegan({
         url: apiEndpoint + '/admin/activities/blogs/' + id,
         method: 'patch',
         data: blog,
-        onSuccess: blogUpdated.type,
+        onSuccess: (toast ? blogUpdated.type : blogUpdatedNoToast.type),
         onError: blogsRequestFailed.type
     }))
 }
