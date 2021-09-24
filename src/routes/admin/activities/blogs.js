@@ -85,6 +85,8 @@ router.patch('/:id', adminAuth, async (req, res) => {
         await blog.save()
 
         const resData = await Blog.findOne({ _id: req.params.id })
+
+        clearCache(JSON.stringify({"collection":"blogs"}))
         
         res.send(resData)
     } catch (e) {
