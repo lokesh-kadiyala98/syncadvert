@@ -81,7 +81,7 @@ span.tab {
   margin-top: 10px;
 }
 
-.spinner-border{
+.spinner-border {
   display: inline-block;
   width: 2rem;
   height: 2rem;
@@ -94,7 +94,7 @@ span.tab {
   margin-right: 1em;
 }
 
-.spinner-border-sm{
+.spinner-border-sm {
   height: 1.4rem;
   width: 1.4rem;
   border-width: .2em;

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import RichTextEditor from 'react-rte';
 import _ from 'lodash';
 import axios from 'axios'
+import BootstrapSwitchButton from 'bootstrap-switch-button-react'
 
 import Form from './../../Form/form';
 import UploadImage from './../../Form/uploadImage';
@@ -18,7 +19,8 @@ class CreateBlog extends Form {
             title: 'Test',
             headerImg: 'blog/c017cf70-1bb1-11ec-95b4-0b85eff472db.png',
             subTitle: 'testing',
-            body: ''
+            body: '',
+            published: false
         },
         editorValue: RichTextEditor.createEmptyValue(),
         localAPIResponseData: {
@@ -32,12 +34,22 @@ class CreateBlog extends Form {
         headerImg: Joi.string(),
         title: Joi.string(),
         subTitle: Joi.string().allow(''),
-        body: Joi.string()
+        body: Joi.string(),
+        published: Joi.boolean()
     }
 
     doSubmit = () => {
-        const {data} = this.state
-        this.props.add(data)
+        const {
+            data, 
+            localAPIResponseData: {
+                _id
+            }
+        } = this.state
+
+        if (!_id)
+            this.props.add(data)
+        else 
+            this.props.update(_id, data)
     }
 
     handleHeaderImageUploadSuccess = (img) => {
@@ -104,17 +116,44 @@ class CreateBlog extends Form {
         this.setState({ editorValue, data })
     }
 
+    onPublishValueChange = (published) => {
+        const {data} = this.state
+        this.setState({ data: {...data, published} })
+    }
+
     render() { 
         const {loading} = this.props.blogs
         const {
+            data: {
+                published
+            },
             localAPIResponseData: {
-                savingInBackground
+                savingInBackground,
+                _id
             }
         } = this.state
 
+        const results = Joi.validate(this.state.data, this.schema, { abortEarly: false });
+        const noErrors = !results.error
+
         return ( 
             <React.Fragment>
-                <div className="p-2 mt-5 container"> 
+                <div className="p-2 mt-5 container new-blog-container"> 
+                    <div className="mb-3 flex-end">
+                        {noErrors &&
+                            <BootstrapSwitchButton
+                                onstyle="outline-success" 
+                                offstyle="outline-danger"
+                                checked={!published}
+                                onlabel='Publish'
+                                offlabel='Unpublish'
+                                onChange={() => {
+                                    this.onPublishValueChange(!published)
+                                }}
+                                width={120}
+                            />
+                        }
+                    </div>
 
                     <div className="mb-5">
                         {this.renderInput('title', 'Title', 'text')}
@@ -144,7 +183,7 @@ class CreateBlog extends Form {
                         </button> :
                         <button className="btn btn-sm float-right blog-save-btn" onClick={this.saveData}>
                             <span className="mr-2">
-                                <i class="fas fa-save"></i>
+                                <i className="fas fa-save"></i>
                             </span>
                             Save
                         </button>
@@ -161,7 +200,9 @@ class CreateBlog extends Form {
                     <div className="btn-grp">
                         {loading ?
                             this.renderLoadingButton(' Loading') :
-                            this.renderButton('Add Blog', 'btn-submit')
+                            _id ?
+                                this.renderButton('Save Blog', 'btn-submit') :
+                                this.renderButton('Add Blog', 'btn-submit')
                         }
                     </div>
                 </div>

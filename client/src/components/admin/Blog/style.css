@@ -25,6 +25,14 @@
     justify-content: space-between;
 }
 
+.blog-content .box-tab {
+    background-color: #d6cc47;
+    color: #21250a;
+    padding: 6px 12px 6px 24px;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
 .blog-content h1 {
     font-weight: 900;
 }
@@ -63,4 +71,38 @@
     height: 1rem;
     width: 1rem;
     margin-right: 0;
+}
+
+.btn.publish {
+    background-color: #2ecc71;
+}
+
+.btn.unpublish {
+    background-color: #d35400;
+}
+
+.btn-attached-grp {
+    display: flex;
+    max-width: 200px;
+}
+
+.btn-attached-grp > * {
+    flex: 1 1 0;
+    border-radius: 0;
+}
+
+.switch {
+    border-radius: 20em;
+}
+
+.switch-handle {
+    border-radius: 20em;
+}
+
+.toggle.ios, .toggle-on.ios, .toggle-off.ios { 
+    border-radius: 20rem; 
+}
+
+.toggle.ios .toggle-handle { 
+    border-radius: 20rem; 
 }

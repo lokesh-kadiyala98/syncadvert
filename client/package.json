@@ -9,6 +9,7 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.20.0",
+    "bootstrap-switch-button-react": "^1.2.0",
     "filepond": "^4.20.1",
     "filepond-plugin-file-validate-type": "^1.2.5",
     "filepond-plugin-image-crop": "^2.0.4",

@@ -135,6 +135,10 @@
     color: #fff;
 }
 
+.btn-submit {
+    color: #21250a !important;
+}
+
 .profile-img-container .profile-img {
     border-radius: 50%;
     width: 100px;

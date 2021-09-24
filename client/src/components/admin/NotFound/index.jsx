@@ -10,7 +10,10 @@ const NotFound = () => {
                         <h1>404</h1>
                         <h3>Blog Not Found</h3>
                         <p className="text-muted">Let me take you back to the blogs page.</p>
-                        <Link to='/adminBlog' className="btn btn-lg text-dark">Blogs</Link>
+                        <Link to='/adminBlog' className="btn btn-lg">
+                            <i class="fas fa-arrow-left mr-3" aria-hidden="true"></i>
+                            Blogs
+                        </Link>
                     </div>
                 </div>
             </div>

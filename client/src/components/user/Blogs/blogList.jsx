@@ -26,6 +26,7 @@ const BlogList = () => {
             <div className="container">
                 <div className="card-columns card-columns-3">
                     {blogList.map(blog =>
+                        blog.published &&
                         <Link to={"/blog/" + blog._id} key={blog._id} className="card">
                             <img className="card-img-top" src={s3BucketName + blog.headerImg} alt="" />
                             <div className="card-body">

@@ -9,7 +9,7 @@ import './../style.css'
 
 const Blog = (props) => {
     const {blogId} = props
-    const [blogList, showBlogList] = useState(true)
+    const [blogList, showBlogList] = useState(false)
     
     return ( 
         <React.Fragment>
