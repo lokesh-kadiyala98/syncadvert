@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import RichTextEditor from 'react-rte'
 import { Link } from 'react-router-dom'
 import htmlReactParser from 'html-react-parser'
+import BootstrapSwitchButton from 'bootstrap-switch-button-react'
 
 import NotFound from './../../admin/NotFound'
 import Form from './../../Form/form'
@@ -20,6 +21,7 @@ class EditBlog extends Form {
             title: '',
             headerImg: '',
             subTitle: '',
+            published: false
         },
         editorValue: {},
         errors: {},
@@ -32,7 +34,8 @@ class EditBlog extends Form {
         headerImg: Joi.string(),
         title: Joi.string(),
         subTitle: Joi.string().allow(''),
-        body: Joi.string()
+        body: Joi.string(),
+        published: Joi.boolean()
     }
     
     async componentDidMount() {
@@ -80,13 +83,35 @@ class EditBlog extends Form {
         this.props.update(blogId, data)
         this.setState({ edit: false })
     }
+
+    onPublishValueChange = (published) => {
+        const {data} = this.state
+        this.setState({ data: {...data, published} })
+    }
     
     render() { 
-        const {loading, data, edit, notFound} = this.state
-        const {headerImg, title, subTitle, body} = data
+        const {
+            loading, 
+            data: {
+                headerImg, 
+                title, 
+                subTitle, 
+                body,
+                published
+            }, 
+            edit, 
+            notFound
+        } = this.state
+
+        let publishedTab;
 
         if (notFound)
             return <NotFound />
+
+        if (published)
+            publishedTab = <div className="box-tab bg-success">Published</div>
+        else
+            publishedTab = <div className="box-tab bg-warn">Unpublished</div>
 
         return ( 
             <div>
@@ -98,13 +123,30 @@ class EditBlog extends Form {
                             <div className="blog-header mb-5">
                                 <Link className="btn btn-light text-dark" to="/adminBlog"><i className="fas fa-arrow-left mr-2"></i> Blogs</Link>
                                 <div className="blog-options">
-                                    <button className="btn text-light btn-warning mr-3" onClick={() => this.setState({ edit: true })}>
+                                    <button className="btn text-light btn-warning mr-3" onClick={() => this.setState({ edit: !edit })}>
                                         <i className="fas fa-edit"></i>
                                     </button>
                                     <button className="btn text-light btn-danger" onClick={this.onDeleteBlog}>
                                         <i className="fas fa-trash"></i>
                                     </button>
                                 </div>
+                            </div>
+
+                            <div className="mb-3 flex-end">
+                                {edit ?
+                                    <BootstrapSwitchButton
+                                        onstyle="outline-success" 
+                                        offstyle="outline-danger"
+                                        checked={!published}
+                                        onlabel='Publish'
+                                        offlabel='Unpublish'
+                                        onChange={() => {
+                                            this.onPublishValueChange(!published)
+                                        }}
+                                        width={120}
+                                    /> :
+                                    publishedTab
+                                }
                             </div>
 
                             {edit ?
